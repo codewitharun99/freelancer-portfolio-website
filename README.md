@@ -109,12 +109,20 @@ this.emailjsConfig = {
 ## 📁 File Structure
 
 ```
-portfolio/
+portfolio/        
 │
-├── index.html          # Main HTML file
-├── style.css           # All CSS styles
-├── script.js           # All JavaScript functionality
-└── README.md           # This file
+├── assets/
+│   ├── img/
+│   │   ├── blog/
+│   │   ├── profile/
+│   │   └── projects/
+│   ├── css/
+│   │   └── style.css    # All CSS styles
+│   └── js/
+│       └── script.js    # All JavaScript functionality
+├── index.html           # Main HTML file
+└── README.md            # This file
+
 ```
 
 ## 🎨 Key Features Explained
