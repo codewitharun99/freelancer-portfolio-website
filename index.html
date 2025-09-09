@@ -1,15 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alex Johnson - Full Stack Developer</title>
+    <title>Alex Johnson | Full Stack Developer - React, Node.js, PostgreSQL</title>
+    <meta name="description"
+        content="Alex Johnson - Full Stack Developer specializing in React, Node.js, PostgreSQL, MongoDB, Docker, and cloud deployment. Offering web & mobile app development, real-time apps, APIs, and DevOps solutions.">
+    <meta name="keywords"
+        content="Full Stack Developer, React Developer, Node.js Developer, PostgreSQL, MongoDB, Docker, Kubernetes, Stripe Integration, Freelance Web Developer, Mobile App Developer">
+    <meta name="author" content="Alex Johnson">
+    <meta property="og:title" content="Alex Johnson | Full Stack Developer">
+    <meta property="og:description"
+        content="Portfolio of Alex Johnson - Full Stack Developer with expertise in React, Node.js, PostgreSQL, and cloud solutions.">
+    <meta property="og:image" content="./assets/img/profile/profile.jpg">
+    <meta property="og:url" content="https://yourportfolio.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Alex Johnson | Full Stack Developer">
+    <meta name="twitter:description"
+        content="Building modern web & mobile applications using React, Node.js, PostgreSQL, and Docker.">
+    <meta name="twitter:image" content="./assets/img/profile/profile.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/img/profile/profile.jpg" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/img/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
-    <script type="text/javascript" src="./assets/img/js/script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
+
 <body>
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -67,8 +92,8 @@
                     <span class="cursor">|</span>
                 </div>
                 <p class="hero-description">
-                    I craft exceptional digital experiences through innovative web development, 
-                    combining technical expertise with creative design to build solutions that 
+                    I craft exceptional digital experiences through innovative web development,
+                    combining technical expertise with creative design to build solutions that
                     make a difference.
                 </p>
                 <div class="hero-buttons">
@@ -123,7 +148,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
+    <section id="about" class="about animate-on-scroll">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">About Me</h2>
@@ -134,14 +159,14 @@
                     <div class="about-intro">
                         <h3>Building the future, one line of code at a time</h3>
                         <p>
-                            With over 5 years of experience in full-stack development, I specialize in creating 
-                            scalable web applications that combine beautiful design with robust functionality. 
-                            My journey began with a curiosity about how websites work, and it has evolved into 
+                            With over 5 years of experience in full-stack development, I specialize in creating
+                            scalable web applications that combine beautiful design with robust functionality.
+                            My journey began with a curiosity about how websites work, and it has evolved into
                             a passion for solving complex problems through code.
                         </p>
                         <p>
-                            I believe in writing clean, maintainable code and staying up-to-date with the latest 
-                            technologies. When I'm not coding, you'll find me contributing to open source projects, 
+                            I believe in writing clean, maintainable code and staying up-to-date with the latest
+                            technologies. When I'm not coding, you'll find me contributing to open source projects,
                             mentoring junior developers, or exploring new frameworks and tools.
                         </p>
                     </div>
@@ -229,7 +254,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
+    <section id="projects" class="projects animate-on-scroll">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Featured Projects</h2>
@@ -242,7 +267,7 @@
                 <button class="filter-btn" data-filter="api">APIs</button>
             </div>
             <div class="projects-grid">
-                <div class="project-card" data-category="web">
+                <div class="project-card animate-on-scroll" data-category="web">
                     <div class="project-image">
                         <img src="./assets/img/projects/project1.jpg" alt="E-commerce Platform">
                         <div class="project-overlay">
@@ -259,10 +284,10 @@
                     <div class="project-content">
                         <div class="project-header">
                             <h3 class="project-title">E-commerce Platform</h3>
-                            <span class="project-status">Completed</span>
+                            <span class="project-status completed">Completed</span>
                         </div>
                         <p class="project-description">
-                            A full-stack e-commerce solution with user authentication, payment processing, 
+                            A full-stack e-commerce solution with user authentication, payment processing,
                             inventory management, and admin dashboard. Built for scalability and performance.
                         </p>
                         <div class="project-tech">
@@ -274,7 +299,7 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-category="web">
+                <div class="project-card animate-on-scroll" data-category="web">
                     <div class="project-image">
                         <img src="./assets/img/projects/project2.jpg" alt="Task Management App">
                         <div class="project-overlay">
@@ -291,10 +316,10 @@
                     <div class="project-content">
                         <div class="project-header">
                             <h3 class="project-title">Task Management App</h3>
-                            <span class="project-status">In Progress</span>
+                            <span class="project-status in-progress">In Progress</span>
                         </div>
                         <p class="project-description">
-                            Collaborative task management with real-time updates, drag-and-drop functionality, 
+                            Collaborative task management with real-time updates, drag-and-drop functionality,
                             team collaboration, and advanced project analytics.
                         </p>
                         <div class="project-tech">
@@ -306,7 +331,7 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-category="mobile">
+                <div class="project-card animate-on-scroll" data-category="mobile">
                     <div class="project-image">
                         <img src="./assets/img/projects/project3.jpg" alt="Weather App">
                         <div class="project-overlay">
@@ -323,10 +348,10 @@
                     <div class="project-content">
                         <div class="project-header">
                             <h3 class="project-title">Weather Dashboard</h3>
-                            <span class="project-status">Completed</span>
+                            <span class="project-status completed">Completed</span>
                         </div>
                         <p class="project-description">
-                            Mobile-first weather application with location-based forecasts, interactive maps, 
+                            Mobile-first weather application with location-based forecasts, interactive maps,
                             and detailed weather analytics with beautiful visualizations.
                         </p>
                         <div class="project-tech">
@@ -337,7 +362,7 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-category="api">
+                <div class="project-card animate-on-scroll" data-category="api">
                     <div class="project-image">
                         <img src="./assets/img/projects/project4.jpg" alt="API Gateway">
                         <div class="project-overlay">
@@ -354,10 +379,10 @@
                     <div class="project-content">
                         <div class="project-header">
                             <h3 class="project-title">API Gateway</h3>
-                            <span class="project-status">Completed</span>
+                            <span class="project-status completed">Completed</span>
                         </div>
                         <p class="project-description">
-                            High-performance API gateway with rate limiting, authentication, caching, 
+                            High-performance API gateway with rate limiting, authentication, caching,
                             and comprehensive monitoring for microservices architecture.
                         </p>
                         <div class="project-tech">
@@ -369,7 +394,7 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-category="web">
+                <div class="project-card animate-on-scroll" data-category="web">
                     <div class="project-image">
                         <img src="./assets/img/projects/project5.jpg" alt="Analytics Dashboard">
                         <div class="project-overlay">
@@ -386,10 +411,10 @@
                     <div class="project-content">
                         <div class="project-header">
                             <h3 class="project-title">Analytics Dashboard</h3>
-                            <span class="project-status">Completed</span>
+                            <span class="project-status completed">Completed</span>
                         </div>
                         <p class="project-description">
-                            Real-time analytics dashboard with interactive charts, data visualization, 
+                            Real-time analytics dashboard with interactive charts, data visualization,
                             and comprehensive reporting for business intelligence.
                         </p>
                         <div class="project-tech">
@@ -401,7 +426,7 @@
                     </div>
                 </div>
 
-                <div class="project-card" data-category="mobile">
+                <div class="project-card animate-on-scroll" data-category="mobile">
                     <div class="project-image">
                         <img src="./assets/img/projects/project6.jpg" alt="Social Media App">
                         <div class="project-overlay">
@@ -418,10 +443,10 @@
                     <div class="project-content">
                         <div class="project-header">
                             <h3 class="project-title">Social Media App</h3>
-                            <span class="project-status">In Progress</span>
+                            <span class="project-status in-progress">In Progress</span>
                         </div>
                         <p class="project-description">
-                            Modern social media platform with real-time messaging, content sharing, 
+                            Modern social media platform with real-time messaging, content sharing,
                             and advanced privacy controls. Focus on user experience and performance.
                         </p>
                         <div class="project-tech">
@@ -436,14 +461,14 @@
     </section>
 
     <!-- Blog Section -->
-    <section id="blog" class="blog">
+    <section id="blog" class="blog animate-on-scroll">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Latest Blog Posts</h2>
                 <p class="section-subtitle">Thoughts, tutorials, and insights from my development journey</p>
             </div>
             <div class="blog-grid">
-                <article class="blog-card">
+                <article class="blog-card animate-on-scroll">
                     <div class="blog-image">
                         <img src="./assets/img/blog/blog1.jpg" alt="React Best Practices">
                         <div class="blog-category">React</div>
@@ -455,14 +480,14 @@
                         </div>
                         <h3 class="blog-title">React Best Practices for 2025</h3>
                         <p class="blog-excerpt">
-                            Discover the latest React patterns and best practices that will make your 
+                            Discover the latest React patterns and best practices that will make your
                             applications more maintainable and performant.
                         </p>
                         <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
-                <article class="blog-card">
+                <article class="blog-card animate-on-scroll">
                     <div class="blog-image">
                         <img src="./assets/img/blog/blog2.jpg" alt="API Design">
                         <div class="blog-category">Backend</div>
@@ -474,14 +499,14 @@
                         </div>
                         <h3 class="blog-title">Building Scalable APIs with Node.js</h3>
                         <p class="blog-excerpt">
-                            Learn how to design and implement robust, scalable APIs that can handle 
+                            Learn how to design and implement robust, scalable APIs that can handle
                             millions of requests with proper architecture patterns.
                         </p>
                         <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
 
-                <article class="blog-card">
+                <article class="blog-card animate-on-scroll">
                     <div class="blog-image">
                         <img src="./assets/img/blog/blog3.jpg" alt="CSS Grid">
                         <div class="blog-category">CSS</div>
@@ -493,7 +518,7 @@
                         </div>
                         <h3 class="blog-title">Mastering CSS Grid Layouts</h3>
                         <p class="blog-excerpt">
-                            A comprehensive guide to CSS Grid with practical examples and advanced 
+                            A comprehensive guide to CSS Grid with practical examples and advanced
                             techniques for creating complex layouts.
                         </p>
                         <a href="#" class="blog-link">Read More <i class="fas fa-arrow-right"></i></a>
@@ -504,7 +529,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
+    <section id="testimonials" class="testimonials animate-on-scroll">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">What Clients Say</h2>
@@ -517,8 +542,9 @@
                             <i class="fas fa-quote-left"></i>
                         </div>
                         <p class="testimonial-text">
-                            "Alex delivered an exceptional e-commerce platform that exceeded our expectations. 
-                            His attention to detail and technical expertise made the entire process smooth and efficient."
+                            "Alex delivered an exceptional e-commerce platform that exceeded our expectations.
+                            His attention to detail and technical expertise made the entire process smooth and
+                            efficient."
                         </p>
                         <div class="testimonial-author">
                             <img src="./assets/img/profile/client2.jpg" alt="Sarah Chen" class="author-avatar">
@@ -536,7 +562,7 @@
                             <i class="fas fa-quote-left"></i>
                         </div>
                         <p class="testimonial-text">
-                            "Working with Alex was a game-changer for our startup. He transformed our ideas into 
+                            "Working with Alex was a game-changer for our startup. He transformed our ideas into
                             a beautiful, functional web application that our users absolutely love."
                         </p>
                         <div class="testimonial-author">
@@ -555,7 +581,7 @@
                             <i class="fas fa-quote-left"></i>
                         </div>
                         <p class="testimonial-text">
-                            "Alex's expertise in both frontend and backend development made him the perfect choice 
+                            "Alex's expertise in both frontend and backend development made him the perfect choice
                             for our complex project. The results speak for themselves - outstanding quality!"
                         </p>
                         <div class="testimonial-author">
@@ -585,7 +611,7 @@
     </section>
 
     <!-- FAQ Section -->
-    <section id="faq" class="faq">
+    <section id="faq" class="faq animate-on-scroll">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Frequently Asked Questions</h2>
@@ -598,7 +624,9 @@
                         <i class="fas fa-plus faq-icon"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>I specialize in modern web technologies including React, Vue.js, Node.js, Python, and PostgreSQL. I'm also experienced with cloud platforms like AWS and modern deployment practices using Docker and Kubernetes.</p>
+                        <p>I specialize in modern web technologies including React, Vue.js, Node.js, Python, and
+                            PostgreSQL. I'm also experienced with cloud platforms like AWS and modern deployment
+                            practices using Docker and Kubernetes.</p>
                     </div>
                 </div>
 
@@ -608,7 +636,9 @@
                         <i class="fas fa-plus faq-icon"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Project timelines vary depending on complexity and scope. A simple website might take 2-3 weeks, while a full-stack application could take 2-3 months. I always provide detailed timelines during our initial consultation.</p>
+                        <p>Project timelines vary depending on complexity and scope. A simple website might take 2-3
+                            weeks, while a full-stack application could take 2-3 months. I always provide detailed
+                            timelines during our initial consultation.</p>
                     </div>
                 </div>
 
@@ -618,7 +648,9 @@
                         <i class="fas fa-plus faq-icon"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes! I offer various maintenance packages including bug fixes, security updates, feature enhancements, and performance optimization. I believe in building long-term relationships with my clients.</p>
+                        <p>Yes! I offer various maintenance packages including bug fixes, security updates, feature
+                            enhancements, and performance optimization. I believe in building long-term relationships
+                            with my clients.</p>
                     </div>
                 </div>
 
@@ -628,7 +660,9 @@
                         <i class="fas fa-plus faq-icon"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>I follow an agile approach with regular check-ins and updates. The process includes discovery, planning, design, development, testing, and deployment. You'll be involved throughout to ensure the final product meets your vision.</p>
+                        <p>I follow an agile approach with regular check-ins and updates. The process includes
+                            discovery, planning, design, development, testing, and deployment. You'll be involved
+                            throughout to ensure the final product meets your vision.</p>
                     </div>
                 </div>
 
@@ -638,7 +672,8 @@
                         <i class="fas fa-plus faq-icon"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>Absolutely! I work with clients worldwide and am comfortable with different time zones. I use modern communication tools to ensure smooth collaboration regardless of location.</p>
+                        <p>Absolutely! I work with clients worldwide and am comfortable with different time zones. I use
+                            modern communication tools to ensure smooth collaboration regardless of location.</p>
                     </div>
                 </div>
 
@@ -648,7 +683,9 @@
                         <i class="fas fa-plus faq-icon"></i>
                     </div>
                     <div class="faq-answer">
-                        <p>My rates vary based on project complexity, timeline, and requirements. I offer both hourly and fixed-price options. Let's discuss your specific needs, and I'll provide a detailed quote.</p>
+                        <p>My rates vary based on project complexity, timeline, and requirements. I offer both hourly
+                            and fixed-price options. Let's discuss your specific needs, and I'll provide a detailed
+                            quote.</p>
                     </div>
                 </div>
             </div>
@@ -656,7 +693,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact">
+    <section id="contact" class="contact animate-on-scroll">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Let's Work Together</h2>
@@ -667,8 +704,8 @@
                     <div class="contact-card">
                         <h3>Get In Touch</h3>
                         <p>
-                            I'm always excited to discuss new projects and opportunities. 
-                            Whether you have a specific idea in mind or just want to explore possibilities, 
+                            I'm always excited to discuss new projects and opportunities.
+                            Whether you have a specific idea in mind or just want to explore possibilities,
                             I'd love to hear from you.
                         </p>
                         <div class="contact-methods">
@@ -737,7 +774,8 @@
                         </div>
                         <div class="form-group">
                             <label for="message">Project Details</label>
-                            <textarea id="message" name="message" rows="6" required placeholder="Tell me about your project, goals, and timeline..."></textarea>
+                            <textarea id="message" name="message" rows="6" required
+                                placeholder="Tell me about your project, goals, and timeline..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-full">
                             <span class="btn-text">Send Message</span>
@@ -762,17 +800,19 @@
                             <span class="logo-text">AJ</span>
                         </div>
                         <p class="footer-description">
-                            Building exceptional digital experiences through innovative web development 
+                            Building exceptional digital experiences through innovative web development
                             and thoughtful design.
                         </p>
                         <div class="social-links">
-                            <a href="https://linkedin.com/in/alexjohnson" class="social-link" target="_blank" rel="noopener">
+                            <a href="https://linkedin.com/in/alexjohnson" class="social-link" target="_blank"
+                                rel="noopener">
                                 <i class="fab fa-linkedin"></i>
                             </a>
                             <a href="https://github.com/alexjohnson" class="social-link" target="_blank" rel="noopener">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="https://twitter.com/alexjohnson" class="social-link" target="_blank" rel="noopener">
+                            <a href="https://twitter.com/alexjohnson" class="social-link" target="_blank"
+                                rel="noopener">
                                 <i class="fab fa-twitter"></i>
                             </a>
                             <a href="mailto:alex.johnson@email.com" class="social-link">
@@ -827,4 +867,5 @@
 
     <script src="./assets/img/js/script.js"></script>
 </body>
+
 </html>

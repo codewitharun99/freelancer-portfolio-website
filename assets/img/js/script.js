@@ -4,7 +4,7 @@ class ThemeManager {
         this.theme = localStorage.getItem('theme') || 'light';
         this.themeToggle = document.getElementById('theme-toggle');
         this.themeIcon = document.getElementById('theme-icon');
-        
+
         this.init();
     }
 
@@ -17,7 +17,7 @@ class ThemeManager {
         this.theme = theme;
         document.documentElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
-        
+
         // Update icon
         if (theme === 'dark') {
             this.themeIcon.className = 'fas fa-sun';
@@ -38,13 +38,13 @@ class MobileNavigation {
         this.mobileMenu = document.getElementById('mobile-menu');
         this.navMenu = document.getElementById('nav-menu');
         this.navLinks = document.querySelectorAll('.nav-link');
-        
+
         this.init();
     }
 
     init() {
         this.mobileMenu.addEventListener('click', () => this.toggleMenu());
-        
+
         // Close menu when clicking on links
         this.navLinks.forEach(link => {
             link.addEventListener('click', () => this.closeMenu());
@@ -98,7 +98,7 @@ class TypingAnimation {
         this.textIndex = 0;
         this.charIndex = 0;
         this.isDeleting = false;
-        
+
         this.init();
     }
 
@@ -108,7 +108,7 @@ class TypingAnimation {
 
     type() {
         const currentText = this.texts[this.textIndex];
-        
+
         if (this.isDeleting) {
             this.element.textContent = currentText.substring(0, this.charIndex - 1);
             this.charIndex--;
@@ -165,7 +165,7 @@ class ScrollAnimations {
             (entries) => this.handleIntersection(entries),
             this.observerOptions
         );
-        
+
         this.init();
     }
 
@@ -185,7 +185,7 @@ class ScrollAnimations {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animated');
-                
+
                 // Animate skill levels
                 if (entry.target.id === 'about') {
                     this.animateSkillLevels();
@@ -210,7 +210,7 @@ class ProjectsFilter {
     constructor() {
         this.filterButtons = document.querySelectorAll('.filter-btn');
         this.projectCards = document.querySelectorAll('.project-card');
-        
+
         this.init();
     }
 
@@ -230,7 +230,7 @@ class ProjectsFilter {
         // Filter projects
         this.projectCards.forEach(card => {
             const category = card.getAttribute('data-category');
-            
+
             if (filter === 'all' || category === filter) {
                 card.classList.remove('hidden');
             } else {
@@ -249,20 +249,20 @@ class TestimonialsSlider {
         this.nextBtn = document.getElementById('next-testimonial');
         this.currentSlide = 0;
         this.autoSlideInterval = null;
-        
+
         this.init();
     }
 
     init() {
         this.prevBtn.addEventListener('click', () => this.prevSlide());
         this.nextBtn.addEventListener('click', () => this.nextSlide());
-        
+
         this.dots.forEach((dot, index) => {
             dot.addEventListener('click', () => this.goToSlide(index));
         });
 
         this.startAutoSlide();
-        
+
         // Pause auto-slide on hover
         const slider = document.querySelector('.testimonials-slider');
         slider.addEventListener('mouseenter', () => this.stopAutoSlide());
@@ -277,7 +277,7 @@ class TestimonialsSlider {
         // Add active class to current
         this.testimonials[index].classList.add('active');
         this.dots[index].classList.add('active');
-        
+
         this.currentSlide = index;
     }
 
@@ -318,8 +318,8 @@ class FAQAccordion {
 
     toggleFAQ(clickedItem) {
         const isActive = clickedItem.classList.contains('active');
-        
-        // Close all FAQ items (one-question-at-a-time)
+
+        // Close all FAQ items
         this.faqItems.forEach(item => {
             item.classList.remove('active');
         });
@@ -331,28 +331,30 @@ class FAQAccordion {
     }
 }
 
-// Contact Form with EmailJS
+// Contact Form
 class ContactForm {
     constructor() {
         this.form = document.getElementById('contact-form');
         this.submitBtn = this.form.querySelector('button[type="submit"]');
-        
-        // Initialize EmailJS (replace with your actual IDs)
+
+        // EmailJS configuration - Replace with your actual IDs
         this.emailjsConfig = {
             serviceID: 'YOUR_SERVICE_ID',
             templateID: 'YOUR_TEMPLATE_ID',
-            userID: 'YOUR_USER_ID'
+            userID: 'YOUR_USER_ID'          
         };
-        
+
         this.init();
     }
 
     init() {
         // Initialize EmailJS
-        emailjs.init(this.emailjsConfig.userID);
-        
+        if (typeof emailjs !== 'undefined') {
+            emailjs.init(this.emailjsConfig.userID);
+        }
+
         this.form.addEventListener('submit', (e) => this.handleSubmit(e));
-        
+
         // Real-time validation
         const inputs = this.form.querySelectorAll('input, textarea, select');
         inputs.forEach(input => {
@@ -363,7 +365,7 @@ class ContactForm {
 
     async handleSubmit(e) {
         e.preventDefault();
-        
+
         if (!this.validateForm()) {
             return;
         }
@@ -371,6 +373,11 @@ class ContactForm {
         this.setLoadingState(true);
 
         try {
+            // Check if EmailJS is available
+            if (typeof emailjs === 'undefined') {
+                throw new Error('EmailJS not loaded');
+            }
+
             // Get form data
             const formData = new FormData(this.form);
             const templateParams = {
@@ -390,10 +397,11 @@ class ContactForm {
 
             this.showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
             this.form.reset();
-            
+
         } catch (error) {
-            console.error('EmailJS Error:', error);
-            this.showNotification('Failed to send message. Please try again or contact me directly.', 'error');
+            console.error('Email Error:', error);
+            this.showNotification('Thank you for your message! (Demo mode - EmailJS not configured)', 'info');
+            this.form.reset();
         } finally {
             this.setLoadingState(false);
         }
@@ -444,7 +452,7 @@ class ContactForm {
 
     setFieldError(field, message) {
         field.classList.add('error');
-        
+
         // Remove existing error message
         const existingError = field.parentNode.querySelector('.error-message');
         if (existingError) {
@@ -455,9 +463,6 @@ class ContactForm {
         const errorElement = document.createElement('span');
         errorElement.className = 'error-message';
         errorElement.textContent = message;
-        errorElement.style.color = '#ef4444';
-        errorElement.style.fontSize = '0.875rem';
-        errorElement.style.marginTop = '4px';
         field.parentNode.appendChild(errorElement);
     }
 
@@ -546,7 +551,6 @@ class ParallaxEffects {
 
     updateParallax() {
         const scrolled = window.pageYOffset;
-        const rate = scrolled * -0.5;
 
         this.elements.forEach((element, index) => {
             const speed = 0.5 + (index * 0.1);
@@ -558,6 +562,17 @@ class ParallaxEffects {
 
 // Initialize all components when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Hide loader after a delay
+    setTimeout(() => {
+        const loader = document.getElementById('loader');
+        if (loader) {
+            loader.style.opacity = '0';
+            setTimeout(() => {
+                loader.style.display = 'none';
+            }, 500);
+        }
+    }, 1000);
+
     // Initialize core components
     new ThemeManager();
     new MobileNavigation();
@@ -582,30 +597,6 @@ document.addEventListener('DOMContentLoaded', () => {
         ];
         new TypingAnimation(typingElement, texts);
     }
-
-    // Add animation classes to elements
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
-        section.classList.add('animate-on-scroll');
-    });
-
-    const projectCards = document.querySelectorAll('.project-card');
-    projectCards.forEach((card, index) => {
-        card.classList.add('animate-on-scroll');
-        card.style.animationDelay = `${index * 0.1}s`;
-    });
-
-    const skillItems = document.querySelectorAll('.skill-item');
-    skillItems.forEach((item, index) => {
-        item.classList.add('animate-on-scroll');
-        item.style.animationDelay = `${index * 0.1}s`;
-    });
-
-    const blogCards = document.querySelectorAll('.blog-card');
-    blogCards.forEach((card, index) => {
-        card.classList.add('animate-on-scroll');
-        card.style.animationDelay = `${index * 0.1}s`;
-    });
 });
 
 // Utility Functions
@@ -623,7 +614,7 @@ function debounce(func, wait) {
 
 function throttle(func, limit) {
     let inThrottle;
-    return function() {
+    return function () {
         const args = arguments;
         const context = this;
         if (!inThrottle) {
