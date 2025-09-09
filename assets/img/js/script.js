@@ -220,24 +220,24 @@ class ProjectsFilter {
         });
     }
 
-    filterProjects(activeBtn) {
-        // Update active button
-        this.filterButtons.forEach(btn => btn.classList.remove('active'));
-        activeBtn.classList.add('active');
+filterProjects(activeBtn) {
+    // Update active button
+    this.filterButtons.forEach(btn => btn.classList.remove('active'));
+    activeBtn.classList.add('active');
 
-        const filter = activeBtn.getAttribute('data-filter');
+    const filter = activeBtn.getAttribute('data-filter');
 
-        // Filter projects
-        this.projectCards.forEach(card => {
-            const category = card.getAttribute('data-category');
+    // Filter projects
+    this.projectCards.forEach(card => {
+        const category = card.getAttribute('data-category');
 
-            if (filter === 'all' || category === filter) {
-                card.classList.remove('hidden');
-            } else {
-                card.classList.add('hidden');
-            }
-        });
-    }
+        if (filter === 'all' || category === filter) {
+            card.classList.remove('hidden');
+        } else {
+            card.classList.add('hidden');
+        }
+    });
+}
 }
 
 // Testimonials Slider
@@ -632,19 +632,3 @@ const optimizedScrollHandler = throttle(() => {
 
 window.addEventListener('scroll', optimizedScrollHandler);
 
-// Preload critical images
-function preloadImages() {
-    const criticalImages = [
-        'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400',
-        'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600',
-        'https://images.pexels.com/photos/590020/pexels-photo-590020.jpeg?auto=compress&cs=tinysrgb&w=600'
-    ];
-
-    criticalImages.forEach(src => {
-        const img = new Image();
-        img.src = src;
-    });
-}
-
-// Initialize preloading
-preloadImages();
